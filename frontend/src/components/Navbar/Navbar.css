@@ -1,0 +1,295 @@
+/* Navbar */
+.navbar {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0 0 20px 20px;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.sticky {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.hidden {
+  transform: translateY(0);
+}
+
+/* Logo */
+.navbar .logo {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.navbar .logo:hover {
+  transform: scale(1.05);
+}
+
+/* Menu */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  color: #49557e;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  cursor: pointer;
+  position: relative;
+  padding: 5px 0;
+}
+
+.navbar-menu li.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: tomato;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar-menu li.active::after {
+  transform: scaleX(1);
+}
+
+.navbar-menu a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li.active a {
+  color: tomato;
+}
+
+.navbar-menu a svg {
+  font-size: 18px;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Button */
+.navbar button {
+  background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+  font-size: 16px;
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: all 0.4s ease;
+}
+
+.navbar button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.navbar button:hover::before {
+  left: 100%;
+}
+
+.navbar button:active {
+  transform: translateY(0) scale(0.95);
+  box-shadow: 0 2px 10px rgba(255, 107, 107, 0.2);
+}
+
+/* Search Icon */
+.navbar-search-icon {
+  position: relative;
+  transition: transform 0.3s ease;
+  font-size: 24px; /* Ukuran ikon diperbesar */
+}
+
+.navbar-search-icon:hover {
+  transform: scale(1.1);
+}
+
+.navbar-search-icon .dot {
+  position: absolute;
+  min-width: 12px; /* Ukuran dot diperbesar */
+  min-height: 12px; /* Ukuran dot diperbesar */
+  background-color: tomato;
+  border-radius: 50%;
+  top: -10px; /* Posisi disesuaikan */
+  right: -10px; /* Posisi disesuaikan */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  animation: muncul 0.5s ease forwards;
+}
+
+@keyframes muncul {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.navbar-search-icon:hover .dot {
+  transform: scale(1.2);
+}
+
+/* Profile Dropdown */
+.navbar-profile {
+  position: relative;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navbar-profile:hover,
+.navbar-profile.active {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.navbar-profile .profile-icon {
+  position: absolute;
+  left: 8px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navbar-profile:hover .profile-icon,
+.navbar-profile.active .profile-icon {
+  left: 16px;
+}
+
+.navbar-profile .profile-text {
+  position: absolute;
+  right: -100px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navbar-profile:hover .profile-text,
+.navbar-profile.active .profile-text {
+  right: 16px;
+  opacity: 1;
+}
+
+.nav-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 1000;
+  min-width: 220px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.navbar-profile:hover .nav-profile-dropdown,
+.nav-profile-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-profile-dropdown li {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-profile-dropdown li:hover {
+  background-color: #f7f7f7;
+  color: tomato;
+}
+
+.nav-profile-dropdown li svg {
+  margin-right: 12px;
+  font-size: 18px;
+  color: #666;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-profile-dropdown li:hover svg {
+  color: tomato;
+  transform: scale(1.1);
+}
+
+.nav-profile-dropdown hr {
+  margin: 8px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+.nav-profile-dropdown .logout-option {
+  color: #e74c3c;
+}
+
+.nav-profile-dropdown .logout-option:hover {
+  background-color: #fee;
+}
+
+.nav-profile-dropdown .logout-option svg {
+  color: #e74c3c;
+}
+
+/* ... kode CSS lainnya tetap sama ... */
+
+body {
+  padding-top: 80px;
+}

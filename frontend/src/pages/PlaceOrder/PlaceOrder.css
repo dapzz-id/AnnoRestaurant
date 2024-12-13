@@ -1,0 +1,118 @@
+.place-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+.place-order-left,
+.place-order-right {
+    width: 100%;
+    max-width: 500px;
+}
+
+.place-order-left .title {
+    font-size: 24px;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.place-order-left .shipping-note {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.place-order-left input,
+.place-order-left select {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline-color: tomato;
+}
+
+.place-order-left select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1em;
+}
+
+.place-order-left .multi-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.place-order .cart-total button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .place-order {
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-between;
+        gap: 50px;
+        margin-top: 100px;
+    }
+
+    .place-order-left {
+        max-width: 30%;
+    }
+
+    .place-order-right {
+        max-width: 40%;
+    }
+
+    .place-order-left .title {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    .place-order-left .shipping-note {
+        text-align: left;
+    }
+
+    .place-order-left .multi-fields {
+        flex-direction: row;
+    }
+}
+
+.previous-address-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.previous-address-section h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.use-previous-address-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.use-previous-address-btn:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,63 @@
+.total-penjualan-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.total-penjualan-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.chart-container {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+  .total-penjualan-container {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  
+  .total-penjualan-title {
+    font-size: 2rem;
+  }
+  
+  .chart-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .total-penjualan-container {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .total-penjualan-title {
+    font-size: 1.75rem;
+  }
+  
+  .chart-container {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,109 @@
+.edit {
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+    color: #333;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit form {
+    display: grid;
+    gap: 25px;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-img-upload img {
+    width: 150px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-product-name, .edit-product-description {
+    width: 100%;
+}
+
+.edit-product-name input, .edit-product-description textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.edit-category-price {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.edit-category-price select, .edit-category-price input {
+    width: 100%;
+    max-width: 200px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.edit-btn {
+    width: 100%;
+    max-width: 200px;
+    border: none;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #2980b9;
+}
+
+.item-list {
+    margin-bottom: 25px;
+}
+
+.item-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.item-list li {
+    cursor: pointer;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.item-list li:hover {
+    color: #3498db;
+}
+
+@media (max-width: 768px) {
+    .edit {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .edit-category-price {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .edit-category-price select, .edit-category-price input {
+        max-width: 100%;
+    }
+}
